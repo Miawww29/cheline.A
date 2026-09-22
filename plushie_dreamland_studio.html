@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plushie Dreamland - Jasa Custom Boneka Pastel</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Fredoka & Quicksand for a soft, rounded, cute typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastelYellow: '#fffabf',
+                        pastelPink: '#ffe7ff',
+                        pastelGreen: '#b2f9e7',
+                        pastelRose: '#f4adcf',
+                        pastelPurple: '#bfc4ff',
+                        pastelBlue: '#bde0fe',
+                        brandPrimary: '#d1568c',
+                        brandDark: '#3b3e66',
+                        brandMuted: '#4f5380',
+                    },
+                    fontFamily: {
+                        sans: ['Quicksand', 'Segoe UI', 'sans-serif'],
+                        display: ['Fredoka', 'Quicksand', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-bg': 'gradientBg 15s ease infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'float-delayed': 'float 4s ease-in-out 2s infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        gradientBg: {
+                            '0%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                            '100%': { 'background-position': '0% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Pengaturan Dasar & Animasi Latar Belakang Pastel */
+        body {
+            font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #3b3e66;
+            background: linear-gradient(135deg, #fffabf, #ffe7ff, #b2f9e7, #f4adcf, #bfc4ff);
+            background-size: 400% 400%;
+            animation: gradientBg 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism custom styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .glass-form {
+            background: rgba(255, 231, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .glass-nav {
+            background: rgba(178, 249, 231, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffe7ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bfc4ff;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f4adcf;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-brandDark selection:bg-pastelRose selection:text-white">
+
+    <!-- 🌟 HEADER: Identitas Utama Jasa Jual/Custom Plushies -->
+    <header class="bg-pastelRose/90 text-white py-8 px-4 text-center shadow-md relative overflow-hidden">
+        <!-- Background decorative cloud shapes -->
+        <div class="absolute -left-10 -top-10 text-white/20 text-8xl pointer-events-none">
+            <i class="fa-solid font-bold fa-cloud"></i>
+        </div>
+        <div class="absolute -right-10 -bottom-10 text-white/20 text-8xl pointer-events-none">
+            <i class="fa-solid font-bold fa-cloud"></i>
+        </div>
+        
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold uppercase tracking-wider mb-3">
+                <span>✨ Custom Plushies Studio #1</span>
+            </div>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide drop-shadow-sm">
+                Plushie Dreamland Studio
+            </h1>
+            <p class="mt-3 text-base sm:text-lg italic font-medium text-white/95 max-w-2xl mx-auto">
+                Ubah Karakter Fantasimu Menjadi Boneka Nyata yang Empuk & Menggemaskan
+            </p>
+        </div>
+    </header>
+
+    <!-- 🌐 NAV: Menu Navigasi Landing Page -->
+    <nav class="glass-nav sticky top-0 z-50 shadow-sm border-b border-white/40 transition-all">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-between h-14">
+                <a href="#" class="font-display font-bold text-lg text-brandDark flex items-center gap-2">
+                    <span class="text-xl">🧸</span>
+                    <span class="hidden xs:inline">Plushie Dreamland</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#beranda" class="px-4 py-2 text-sm font-semibold text-brandDark hover:bg-pastelYellow rounded-xl transition duration-300">Beranda</a>
+                    <a href="#keunggulan" class="px-4 py-2 text-sm font-semibold text-brandDark hover:bg-pastelYellow rounded-xl transition duration-300">Keunggulan</a>
+                    <a href="#customizer" class="px-4 py-2 text-sm font-semibold text-brandDark hover:bg-pastelYellow rounded-xl transition duration-300 flex items-center gap-1">
+                        <i class="fa-solid fa-wand-magic-sparkles text-brandPrimary"></i> Customizer
+                    </a>
+                    <a href="#katalog" class="px-4 py-2 text-sm font-semibold text-brandDark hover:bg-pastelYellow rounded-xl transition duration-300">Katalog Kain</a>
+                    <a href="#kontak" class="px-4 py-2 text-sm font-semibold text-brandDark hover:bg-pastelYellow rounded-xl transition duration-300">Hubungi Kami</a>
+                </div>
+
+                <!-- CTA Button Nav -->
+                <div class="flex items-center gap-2">
+                    <a href="#customizer" class="bg-pastelPurple hover:bg-pastelYellow text-brandDark font-bold px-4 py-2 rounded-xl text-xs sm:text-sm shadow-sm transition duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-scissors"></i>
+                        <span>Buat Custom</span>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl text-brandDark hover:bg-white/50 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav Dropdown -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 pt-2 border-t border-brandDark/10 space-y-2">
+                <a href="#beranda" class="mobile-link block px-4 py-2 text-sm font-semibold rounded-lg hover:bg-pastelYellow">Beranda</a>
+                <a href="#keunggulan" class="mobile-link block px-4 py-2 text-sm font-semibold rounded-lg hover:bg-pastelYellow">Keunggulan</a>
+                <a href="#customizer" class="mobile-link block px-4 py-2 text-sm font-semibold rounded-lg hover:bg-pastelYellow">Customizer Interactive</a>
+                <a href="#katalog" class="mobile-link block px-4 py-2 text-sm font-semibold rounded-lg hover:bg-pastelYellow">Katalog Kain & Portfolio</a>
+                <a href="#kontak" class="mobile-link block px-4 py-2 text-sm font-semibold rounded-lg hover:bg-pastelYellow">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 📋 MAIN: Konten Fleksibel Utama -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 space-y-12">
+
+        <!-- Hero Welcome Card -->
+        <section id="beranda" class="glass-card rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden border border-white/80">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pastelPink text-brandPrimary text-xs font-bold">
+                        <i class="fa-solid fa-heart"></i> Handcrafted With Love
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-brandPrimary leading-tight">
+                        Wujudkan Karakter Impianmu Dalam Wujud Boneka Pastel Super Lembut!
+                    </h2>
+                    <p class="text-brandMuted text-base sm:text-lg leading-relaxed">
+                        Punya karakter OC (Original Character), maskot favorit, atau desain idaman? Kami siap menjahitnya menjadi boneka plushie premium dengan sentuhan warna-warna pastel yang menyenangkan.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="#customizer" class="bg-pastelPurple hover:bg-pastelYellow text-brandDark font-bold px-6 py-3 rounded-2xl transition duration-300 shadow-md flex items-center gap-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-calculator"></i> Estimasi Harga Custom
+                        </a>
+                        <a href="#katalog" class="bg-white/80 hover:bg-white text-brandDark border border-pastelPurple font-bold px-6 py-3 rounded-2xl transition duration-300 flex items-center gap-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-images"></i> Lihat Galeri Karya
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Animated Plushie Hero Display -->
+                <div class="md:col-span-5 relative flex justify-center items-center py-4">
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full bg-gradient-to-tr from-pastelPink via-pastelYellow to-pastelGreen flex items-center justify-center p-4 shadow-inner relative animate-float">
+                        <!-- Plushie SVG Illustration -->
+                        <svg class="w-48 h-48 sm:w-56 sm:h-56 drop-shadow-xl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Teddy Bear Pastel Art -->
+                            <!-- Ears -->
+                            <circle cx="55" cy="55" r="28" fill="#BFC4FF"/>
+                            <circle cx="55" cy="55" r="16" fill="#FFE7FF"/>
+                            <circle cx="145" cy="55" r="28" fill="#BFC4FF"/>
+                            <circle cx="145" cy="55" r="16" fill="#FFE7FF"/>
+                            <!-- Head -->
+                            <circle cx="100" cy="100" r="60" fill="#FFE7FF"/>
+                            <!-- Snout -->
+                            <ellipse cx="100" cy="115" rx="22" ry="16" fill="#FFFFFF"/>
+                            <polygon points="100,105 92,113 108,113" fill="#F4ADCF"/>
+                            <path d="M100,113 L100,120 M94,120 C96,124 104,124 106,120" stroke="#3B3E66" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Eyes -->
+                            <circle cx="78" cy="92" r="6" fill="#3B3E66"/>
+                            <circle cx="76" cy="90" r="2" fill="#FFFFFF"/>
+                            <circle cx="122" cy="92" r="6" fill="#3B3E66"/>
+                            <circle cx="120" cy="90" r="2" fill="#FFFFFF"/>
+                            <!-- Blushes -->
+                            <ellipse cx="68" cy="104" rx="8" ry="5" fill="#F4ADCF" opacity="0.6"/>
+                            <ellipse cx="132" cy="104" rx="8" ry="5" fill="#F4ADCF" opacity="0.6"/>
+                            <!-- Bowtie -->
+                            <polygon points="85,148 100,155 85,162" fill="#B2F9E7"/>
+                            <polygon points="115,148 100,155 115,162" fill="#B2F9E7"/>
+                            <circle cx="100" cy="155" r="5" fill="#FFFABF"/>
+                        </svg>
+                        
+                        <!-- Floating Badges -->
+                        <div class="absolute -top-2 -right-2 bg-white px-3 py-1.5 rounded-2xl shadow-lg text-xs font-bold text-brandPrimary flex items-center gap-1 border border-pastelPink animate-float-delayed">
+                            <i class="fa-solid fa-sparkles text-amber-400"></i> Minky Soft
+                        </div>
+                        <div class="absolute -bottom-2 -left-2 bg-white px-3 py-1.5 rounded-2xl shadow-lg text-xs font-bold text-brandDark flex items-center gap-1 border border-pastelGreen">
+                            <i class="fa-solid fa-shield-heart text-rose-400"></i> Anti-Alergi
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION KIRI/KEUNGGULAN: Penjelasan Informasi Layanan -->
+        <section id="keunggulan" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Left Info Box -->
+            <div class="md:col-span-7 glass-card rounded-3xl p-6 sm:p-8 shadow-md flex flex-col justify-between border-l-8 border-brandPrimary">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-pastelPink flex items-center justify-center text-brandPrimary text-xl font-bold shadow-inner">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-display text-2xl sm:text-3xl font-bold text-brandPrimary">Layanan Custom Premium</h2>
+                            <p class="text-xs text-brandMuted font-medium">Kualitas Eksklusif Berstandar Tinggi</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-brandDark leading-relaxed mb-6 font-medium text-sm sm:text-base">
+                        Kami menyediakan jasa pembuatan boneka plushies jahit tangan secara eksklusif menggunakan bahan kain bertekstur lembut dan isian anti-alergi. Setiap jahitan diproses secara teliti agar menyerupai desain asli favoritmu!
+                    </p>
+
+                    <h3 class="font-display text-lg font-bold text-brandDark mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-400"></i> Kenapa Memilih Plushie Dreamland?
+                    </h3>
+
+                    <!-- Features List (Sesuai dengan kode awal user) -->
+                    <ul class="features-list space-y-3">
+                        <li class="p-3.5 bg-pastelYellow/50 rounded-2xl border-l-4 border-pastelPurple font-semibold text-brandDark flex items-start gap-3 shadow-sm hover:translate-x-1 transition duration-200">
+                            <span class="text-2xl">🧸</span>
+                            <div>
+                                <strong class="text-brandPrimary block text-sm sm:text-base">Bahan Bulu Premium</strong>
+                                <span class="text-xs sm:text-sm font-normal text-brandMuted">Menggunakan kain Minky import super halus dan nyaman saat dipeluk.</span>
+                            </div>
+                        </li>
+                        <li class="p-3.5 bg-pastelYellow/50 rounded-2xl border-l-4 border-pastelPurple font-semibold text-brandDark flex items-start gap-3 shadow-sm hover:translate-x-1 transition duration-200">
+                            <span class="text-2xl">🎨</span>
+                            <div>
+                                <strong class="text-brandPrimary block text-sm sm:text-base">Palet Warna Akurat</strong>
+                                <span class="text-xs sm:text-sm font-normal text-brandMuted">Pilihan warna pastel kain terlengkap untuk penyesuaian desain optimal.</span>
+                            </div>
+                        </li>
+                        <li class="p-3.5 bg-pastelYellow/50 rounded-2xl border-l-4 border-pastelPurple font-semibold text-brandDark flex items-start gap-3 shadow-sm hover:translate-x-1 transition duration-200">
+                            <span class="text-2xl">🧵</span>
+                            <div>
+                                <strong class="text-brandPrimary block text-sm sm:text-base">Detail Jahitan Rapi</strong>
+                                <span class="text-xs sm:text-sm font-normal text-brandMuted">Dikerjakan oleh pengrajin boneka berpengalaman dengan bordir detail.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-brandDark/10 flex items-center justify-between text-xs text-brandMuted">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-truck-fast text-pastelRose"></i> Pengiriman Seluruh Indonesia</span>
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-clock text-pastelPurple"></i> Pengerjaan 7-14 Hari</span>
+                </div>
+            </div>
+
+            <!-- Right Visual Highlight Box -->
+            <div class="md:col-span-5 glass-card rounded-3xl p-6 shadow-md flex flex-col justify-center items-center text-center space-y-4 bg-gradient-to-b from-white/90 to-pastelPink/30">
+                <div class="w-20 h-20 rounded-full bg-pastelGreen/80 flex items-center justify-center text-3xl shadow-md text-teal-700 mb-2">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-brandPrimary">Dacron Anti-Alergi Premium</h3>
+                <p class="text-xs sm:text-sm text-brandMuted max-w-xs">
+                    Isian dakron Grade A silikon murni, sangat mengembang, tidak gampang kempes, aman untuk anak-anak dan pemilik kulit sensitif.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-3 w-full pt-4">
+                    <div class="p-3 bg-white/80 rounded-2xl text-center border border-pastelGreen">
+                        <span class="block font-display font-bold text-lg text-brandDark">100%</span>
+                        <span class="text-[11px] text-brandMuted">Jahit Tangan Presisi</span>
+                    </div>
+                    <div class="p-3 bg-white/80 rounded-2xl text-center border border-pastelPink">
+                        <span class="block font-display font-bold text-lg text-brandDark">50+</span>
+                        <span class="text-[11px] text-brandMuted">Variasi Warna Pastel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🪡 INTERACTIVE CUSTOMIZER / CALCULATOR SECTION -->
+        <section id="customizer" class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl border border-white">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="px-3 py-1 rounded-full bg-pastelPurple text-brandDark font-bold text-xs uppercase tracking-wider">Simulasi Pesanan</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-brandPrimary mt-2">Kalkulator Custom Plushie</h2>
+                <p class="text-xs sm:text-sm text-brandMuted">Pilih spesifikasi boneka impianmu untuk melihat estimasi biaya pengerjaan secara langsung.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Customizer Options Form Controls -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <!-- 1. Size Selection -->
+                    <div>
+                        <label class="block text-xs font-bold text-brandDark uppercase tracking-wider mb-2">
+                            1. Ukuran Boneka (Tinggi)
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                            <button type="button" onclick="selectSize('small', 120000)" id="size-small" class="size-btn p-3 rounded-2xl border-2 border-pastelGreen bg-white hover:bg-pastelGreen/30 text-center transition">
+                                <span class="block text-lg">🧸</span>
+                                <span class="block font-bold text-xs text-brandDark mt-1">Small (15 cm)</span>
+                                <span class="block text-[11px] text-brandMuted">Rp 120rb</span>
+                            </button>
+                            <button type="button" onclick="selectSize('medium', 220000)" id="size-medium" class="size-btn p-3 rounded-2xl border-2 border-pastelPurple bg-pastelPurple/40 text-center transition font-bold">
+                                <span class="block text-xl">🧸</span>
+                                <span class="block font-bold text-xs text-brandDark mt-1">Medium (30 cm)</span>
+                                <span class="block text-[11px] text-brandMuted">Rp 220rb</span>
+                            </button>
+                            <button type="button" onclick="selectSize('large', 380000)" id="size-large" class="size-btn p-3 rounded-2xl border-2 border-pastelGreen bg-white hover:bg-pastelGreen/30 text-center transition">
+                                <span class="block text-2xl">🧸</span>
+                                <span class="block font-bold text-xs text-brandDark mt-1">Large (50 cm)</span>
+                                <span class="block text-[11px] text-brandMuted">Rp 380rb</span>
+                            </button>
+                            <button type="button" onclick="selectSize('giant', 650000)" id="size-giant" class="size-btn p-3 rounded-2xl border-2 border-pastelGreen bg-white hover:bg-pastelGreen/30 text-center transition">
+                                <span class="block text-3xl">🧸</span>
+                                <span class="block font-bold text-xs text-brandDark mt-1">Giant (80 cm)</span>
+                                <span class="block text-[11px] text-brandMuted">Rp 650rb</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Fabric Material -->
+                    <div>
+                        <label class="block text-xs font-bold text-brandDark uppercase tracking-wider mb-2">
+                            2. Tipe Kain Soft Plushie
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <label class="fabric-option p-3 rounded-2xl border-2 border-pastelPurple bg-white flex items-center gap-3 cursor-pointer hover:border-pastelRose transition">
+                                <input type="radio" name="fabric" value="Minky Super Soft" data-price="0" checked onchange="updateCalculator()" class="text-pastelRose focus:ring-pastelRose">
+                                <div>
+                                    <span class="block text-xs font-bold text-brandDark">Minky Super Soft</span>
+                                    <span class="block text-[10px] text-brandMuted">Standard Premium (+Rp 0)</span>
+                                </div>
+                            </label>
+                            <label class="fabric-option p-3 rounded-2xl border-2 border-pastelGreen bg-white flex items-center gap-3 cursor-pointer hover:border-pastelRose transition">
+                                <input type="radio" name="fabric" value="Velvet Cloud" data-price="25000" onchange="updateCalculator()" class="text-pastelRose focus:ring-pastelRose">
+                                <div>
+                                    <span class="block text-xs font-bold text-brandDark">Velvet Cloud</span>
+                                    <span class="block text-[10px] text-brandMuted">Tekstur Beludru (+Rp 25rb)</span>
+                                </div>
+                            </label>
+                            <label class="fabric-option p-3 rounded-2xl border-2 border-pastelGreen bg-white flex items-center gap-3 cursor-pointer hover:border-pastelRose transition">
+                                <input type="radio" name="fabric" value="Sherpa Fluffy Fleece" data-price="35000" onchange="updateCalculator()" class="text-pastelRose focus:ring-pastelRose">
+                                <div>
+                                    <span class="block text-xs font-bold text-brandDark">Sherpa Fleece</span>
+                                    <span class="block text-[10px] text-brandMuted">Bulu Domba Lucu (+Rp 35rb)</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 3. Primary Pastel Color Palette Picker -->
+                    <div>
+                        <label class="block text-xs font-bold text-brandDark uppercase tracking-wider mb-2">
+                            3. Warna Utama Dominan
+                        </label>
+                        <div class="flex flex-wrap gap-3">
+                            <button type="button" onclick="selectColor('#f4adcf', 'Strawberry Pink')" class="color-swatch w-10 h-10 rounded-full bg-[#f4adcf] border-4 border-white shadow-md ring-2 ring-pastelRose transition transform hover:scale-110" title="Strawberry Pink"></button>
+                            <button type="button" onclick="selectColor('#fffabf', 'Lemon Sorbet')" class="color-swatch w-10 h-10 rounded-full bg-[#fffabf] border-4 border-white shadow-md ring-1 ring-gray-200 transition transform hover:scale-110" title="Lemon Sorbet"></button>
+                            <button type="button" onclick="selectColor('#b2f9e7', 'Seafair Mint')" class="color-swatch w-10 h-10 rounded-full bg-[#b2f9e7] border-4 border-white shadow-md ring-1 ring-gray-200 transition transform hover:scale-110" title="Seafair Mint"></button>
+                            <button type="button" onclick="selectColor('#bfc4ff', 'Dried Lilac')" class="color-swatch w-10 h-10 rounded-full bg-[#bfc4ff] border-4 border-white shadow-md ring-1 ring-gray-200 transition transform hover:scale-110" title="Dried Lilac"></button>
+                            <button type="button" onclick="selectColor('#ffe7ff', 'Bunny Tail Peach')" class="color-swatch w-10 h-10 rounded-full bg-[#ffe7ff] border-4 border-white shadow-md ring-1 ring-gray-200 transition transform hover:scale-110" title="Bunny Tail Peach"></button>
+                            <button type="button" onclick="selectColor('#bde0fe', 'Sky Cloud Blue')" class="color-swatch w-10 h-10 rounded-full bg-[#bde0fe] border-4 border-white shadow-md ring-1 ring-gray-200 transition transform hover:scale-110" title="Sky Cloud Blue"></button>
+                        </div>
+                        <span id="selected-color-label" class="block text-xs font-semibold text-brandPrimary mt-2">Terpilih: Strawberry Pink</span>
+                    </div>
+
+                    <!-- 4. Accessories Add-ons -->
+                    <div>
+                        <label class="block text-xs font-bold text-brandDark uppercase tracking-wider mb-2">
+                            4. Aksesoris & Fitur Tambahan
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <label class="p-2.5 bg-white rounded-xl border border-pastelPurple flex items-center gap-2 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" value="Bordir Mata Expressive" data-price="25000" onchange="updateCalculator()" class="addon-check rounded text-pastelRose focus:ring-pastelRose">
+                                <span>✨ Bordir Mata Detail (+25rb)</span>
+                            </label>
+                            <label class="p-2.5 bg-white rounded-xl border border-pastelPurple flex items-center gap-2 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" value="Baju / Outfit Custom" data-price="45000" onchange="updateCalculator()" class="addon-check rounded text-pastelRose focus:ring-pastelRose">
+                                <span>👗 Set Baju Custom (+45rb)</span>
+                            </label>
+                            <label class="p-2.5 bg-white rounded-xl border border-pastelPurple flex items-center gap-2 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" value="Kotak Suara Voice Box" data-price="35000" onchange="updateCalculator()" class="addon-check rounded text-pastelRose focus:ring-pastelRose">
+                                <span>🔊 Sound/Voice Box (+35rb)</span>
+                            </label>
+                            <label class="p-2.5 bg-white rounded-xl border border-pastelPurple flex items-center gap-2 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" value="Aroma Lavender" data-price="15000" onchange="updateCalculator()" class="addon-check rounded text-pastelRose focus:ring-pastelRose">
+                                <span>🌸 Aroma Lavender (+15rb)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Live Price Summary Card -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-white to-pastelPink/40 rounded-3xl p-6 shadow-lg border border-pastelPurple relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-brandDark/10 pb-4 mb-4">
+                            <h3 class="font-display font-bold text-lg text-brandPrimary flex items-center gap-2">
+                                <i class="fa-solid fa-receipt"></i> Ringkasan Custom
+                            </h3>
+                            <span class="px-2.5 py-1 bg-pastelYellow text-brandDark rounded-full text-[10px] font-bold">Draft Specs</span>
+                        </div>
+
+                        <!-- Live Visual Preview Circle -->
+                        <div class="flex justify-center my-4">
+                            <div id="preview-circle" class="w-28 h-28 rounded-full bg-[#f4adcf] flex items-center justify-center shadow-md transition-all duration-300 border-4 border-white relative">
+                                <span id="preview-emoji" class="text-4xl transition-all duration-300">🧸</span>
+                                <span id="preview-size-tag" class="absolute -bottom-2 bg-brandDark text-white text-[9px] px-2 py-0.5 rounded-full font-bold">Medium 30cm</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-brandDark">
+                            <div class="flex justify-between py-1 border-b border-dashed border-gray-200">
+                                <span class="text-brandMuted">Ukuran:</span>
+                                <span id="summary-size" class="font-bold">Medium (30 cm)</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-dashed border-gray-200">
+                                <span class="text-brandMuted">Bahan Kain:</span>
+                                <span id="summary-fabric" class="font-bold">Minky Super Soft</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-dashed border-gray-200">
+                                <span class="text-brandMuted">Warna Utama:</span>
+                                <span id="summary-color" class="font-bold">Strawberry Pink</span>
+                            </div>
+                            <div class="py-1 border-b border-dashed border-gray-200">
+                                <span class="text-brandMuted block mb-1">Aksesoris Tambahan:</span>
+                                <ul id="summary-addons" class="list-disc list-inside text-[11px] text-brandMuted space-y-0.5 pl-1">
+                                    <li>Tanpa Aksesoris Tambahan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-brandDark/10">
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs font-bold text-brandMuted">Estimasi Total Biaya:</span>
+                            <span id="total-price" class="font-display font-bold text-2xl text-brandPrimary">Rp 220.000</span>
+                        </div>
+                        <button type="button" onclick="applyCustomToForm()" class="w-full py-3 bg-pastelPurple hover:bg-pastelYellow text-brandDark font-bold rounded-2xl shadow-md transition duration-300 flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <span>Terapkan Ke Form Pemesanan</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 🎨 KATALOG KAIN & PORTFOLIO GALLERY SECTION -->
+        <section id="katalog" class="space-y-6">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="px-3 py-1 rounded-full bg-pastelGreen text-teal-800 font-bold text-xs uppercase tracking-wider">Galeri Hasil Karya</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-brandPrimary mt-2">Katalog & Portfolio Boneka</h2>
+                <p class="text-xs sm:text-sm text-brandMuted">Inspirasi boneka buatan tim pengrajin Plushie Dreamland Studio.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2">
+                <button onclick="filterCatalog('all')" class="catalog-filter-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold bg-pastelPurple text-brandDark shadow-sm hover:bg-pastelYellow transition">Semua</button>
+                <button onclick="filterCatalog('animal')" class="catalog-filter-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold bg-white text-brandDark shadow-sm hover:bg-pastelYellow transition">Hewan Imut</button>
+                <button onclick="filterCatalog('chibi')" class="catalog-filter-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold bg-white text-brandDark shadow-sm hover:bg-pastelYellow transition">Karakter Chibi</button>
+                <button onclick="filterCatalog('fantasy')" class="catalog-filter-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold bg-white text-brandDark shadow-sm hover:bg-pastelYellow transition">Makhluk Fantasi</button>
+            </div>
+
+            <!-- Catalog Items Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Item 1 -->
+                <div class="catalog-item animal glass-card rounded-3xl p-5 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-white">
+                    <div>
+                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-pastelPink to-pastelYellow flex items-center justify-center text-7xl relative overflow-hidden group">
+                            <span class="group-hover:scale-110 transition duration-300">🐰</span>
+                            <span class="absolute top-3 right-3 bg-white/90 text-brandPrimary px-2.5 py-1 rounded-full text-[10px] font-bold shadow-sm">Pastel Minky</span>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="font-display font-bold text-lg text-brandDark">Bunny Cloud Pastel</h3>
+                            <p class="text-xs text-brandMuted mt-1">Kelinci telinga panjang dengan kain Minky Super Soft warna Pink Soft.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-brandDark/10 flex items-center justify-between">
+                        <span class="font-display font-bold text-brandPrimary text-sm">Rp 220.000</span>
+                        <button onclick="openModal('Bunny Cloud Pastel', 'Kelinci dengan kain Minky import dan aksesoris pita pastel.', '30 cm', 'Minky Super Soft', '🐰')" class="px-3 py-1.5 bg-pastelPurple hover:bg-pastelYellow text-brandDark text-xs font-bold rounded-xl transition">
+                            Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="catalog-item chibi glass-card rounded-3xl p-5 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-white">
+                    <div>
+                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-pastelGreen to-pastelBlue flex items-center justify-center text-7xl relative overflow-hidden group">
+                            <span class="group-hover:scale-110 transition duration-300">🐱</span>
+                            <span class="absolute top-3 right-3 bg-white/90 text-brandPrimary px-2.5 py-1 rounded-full text-[10px] font-bold shadow-sm">Handmade</span>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="font-display font-bold text-lg text-brandDark">Chibi Neko Mint</h3>
+                            <p class="text-xs text-brandMuted mt-1">Kucing imut warna Seafair Mint lengkap dengan lonceng kecil di leher.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-brandDark/10 flex items-center justify-between">
+                        <span class="font-display font-bold text-brandPrimary text-sm">Rp 245.000</span>
+                        <button onclick="openModal('Chibi Neko Mint', 'Custom kucing chibi mint dengan bordir ekspresi khusus.', '35 cm', 'Velvet Cloud', '🐱')" class="px-3 py-1.5 bg-pastelPurple hover:bg-pastelYellow text-brandDark text-xs font-bold rounded-xl transition">
+                            Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="catalog-item fantasy glass-card rounded-3xl p-5 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between border border-white">
+                    <div>
+                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-pastelPurple to-pastelPink flex items-center justify-center text-7xl relative overflow-hidden group">
+                            <span class="group-hover:scale-110 transition duration-300">🦄</span>
+                            <span class="absolute top-3 right-3 bg-white/90 text-brandPrimary px-2.5 py-1 rounded-full text-[10px] font-bold shadow-sm">Best Seller</span>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="font-display font-bold text-lg text-brandDark">Unicorn Sparkle Lilac</h3>
+                            <p class="text-xs text-brandMuted mt-1">Unicorn ajaib bernuansa lilac pastel dengan tanduk emas mengkilap.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-brandDark/10 flex items-center justify-between">
+                        <span class="font-display font-bold text-brandPrimary text-sm">Rp 380.000</span>
+                        <button onclick="openModal('Unicorn Sparkle Lilac', 'Boneka Unicorn dengan bulu fleece gradasi dan bordir bintang.', '50 cm', 'Sherpa Fluffy', '🦄')" class="px-3 py-1.5 bg-pastelPurple hover:bg-pastelYellow text-brandDark text-xs font-bold rounded-xl transition">
+                            Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 💬 TESTIMONI & CARA PEMESANAN -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Order Steps -->
+            <div class="md:col-span-6 glass-card rounded-3xl p-6 sm:p-8 shadow-md">
+                <h3 class="font-display text-2xl font-bold text-brandPrimary mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check"></i> Alur Pemesanan Custom
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <span class="w-8 h-8 rounded-full bg-pastelRose text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">1</span>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandDark">Isi Form & Kirim Referensi</h4>
+                            <p class="text-xs text-brandMuted">Isi formulir di samping atau gunakan customizer untuk estimasi spesifikasi.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="w-8 h-8 rounded-full bg-pastelPurple text-brandDark font-bold flex items-center justify-center flex-shrink-0 text-sm">2</span>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandDark">Konfirmasi Pattern & Warna Kain</h4>
+                            <p class="text-xs text-brandMuted">Tim kami akan mengontakmu via WhatsApp/Email untuk menyamakan warna pastel.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="w-8 h-8 rounded-full bg-pastelGreen text-teal-800 font-bold flex items-center justify-center flex-shrink-0 text-sm">3</span>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandDark">Proses Penjahitan Eksklusif</h4>
+                            <p class="text-xs text-brandMuted">Boneka dipotong, dijahit, dan diisi dakron murni anti-alergi (7-14 hari).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="w-8 h-8 rounded-full bg-pastelYellow text-brandDark font-bold flex items-center justify-center flex-shrink-0 text-sm">4</span>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandDark">Pengiriman Rapi & Safe Box</h4>
+                            <p class="text-xs text-brandMuted">Plushie dibungkus dengan kartu ucapan dan dikirim ke alamat tujuan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Testimonial Bubble -->
+            <div class="md:col-span-6 space-y-4">
+                <div class="glass-card rounded-3xl p-6 shadow-md relative">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-pastelPink flex items-center justify-center font-bold text-brandPrimary">
+                            C
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandDark">Cheline A.</h4>
+                            <div class="text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-brandMuted italic leading-relaxed">
+                        "Hasil jahitannya super rapi! Kain Minky-nya beneran lembut banget dan warnanya pas persis sama gambar OC saya. Thank you Plushie Dreamland!"
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 shadow-md relative">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-pastelGreen flex items-center justify-center font-bold text-teal-800">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandDark">Rina K.</h4>
+                            <div class="text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-brandMuted italic leading-relaxed">
+                        "Customer servicenya ramah, dikasih rekomendasi palet warna pastel yang serasi. Boneka datang tepat waktu dengan paking yang cute banget."
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 5. SECTION FORMULIR KONTAK (Kanan / Sesuai Kode VS Code User) -->
+        <section id="kontak" class="max-w-2xl mx-auto w-full">
+            <div class="glass-form rounded-3xl p-6 sm:p-10 shadow-2xl border border-white relative">
+                
+                <div class="text-center mb-8">
+                    <div class="w-14 h-14 rounded-2xl bg-pastelPurple/60 text-brandDark text-2xl flex items-center justify-center mx-auto mb-3 shadow-inner">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-brandPrimary">Formulir Kontak</h2>
+                    <p class="text-xs text-brandMuted mt-1">Isi data di bawah ini untuk memulai pendaftaran custom atau mengajukan pertanyaan.</p>
+                </div>
+
+                <!-- FORM UTAMA - Menjaga ID, Name, dan Placeholder bawaan user -->
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                    
+                    <!-- Nama Lengkap -->
+                    <div class="form-group">
+                        <label for="nama" class="block mb-2 text-xs font-bold text-brandMuted uppercase tracking-wider">
+                            Nama Lengkap <span class="text-rose-400">*</span>
+                        </label>
+                        <input type="text" id="nama" name="nama" placeholder="cheline" required 
+                            class="w-full p-3.5 bg-white rounded-xl border-2 border-pastelGreen focus:border-pastelPurple focus:outline-none transition duration-300 text-sm font-medium text-brandDark shadow-sm">
+                    </div>
+
+                    <!-- Alamat Email -->
+                    <div class="form-group">
+                        <label for="email" class="block mb-2 text-xs font-bold text-brandMuted uppercase tracking-wider">
+                            Alamat Email <span class="text-rose-400">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="chelineagrecia29@gmail.com" required 
+                            class="w-full p-3.5 bg-white rounded-xl border-2 border-pastelGreen focus:border-pastelPurple focus:outline-none transition duration-300 text-sm font-medium text-brandDark shadow-sm">
+                    </div>
+
+                    <!-- Kategori Informasi (Dropdown Select) -->
+                    <div class="form-group">
+                        <label for="pilihan" class="block mb-2 text-xs font-bold text-brandMuted uppercase tracking-wider">
+                            Kategori Informasi
+                        </label>
+                        <select id="pilihan" name="pilihan" 
+                            class="w-full p-3.5 bg-white rounded-xl border-2 border-pastelGreen focus:border-pastelPurple focus:outline-none transition duration-300 text-sm font-medium text-brandDark shadow-sm cursor-pointer">
+                            <option value="pendaftaran">Pendaftaran Custom</option>
+                            <option value="pertanyaan">Pertanyaan Umum</option>
+                            <option value="saran">Saran & Masukan</option>
+                        </select>
+                    </div>
+
+                    <!-- Catatan / Spesifikasi Tambahan -->
+                    <div class="form-group">
+                        <label for="catatan" class="block mb-2 text-xs font-bold text-brandMuted uppercase tracking-wider">
+                            Detail Desain / Catatan Tambahan
+                        </label>
+                        <textarea id="catatan" name="catatan" rows="3" placeholder="Tuliskan deskripsi karakter, link artwork, atau catatan khusus..." 
+                            class="w-full p-3.5 bg-white rounded-xl border-2 border-pastelGreen focus:border-pastelPurple focus:outline-none transition duration-300 text-sm font-medium text-brandDark shadow-sm resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="btnSubmit" 
+                        class="w-full py-4 bg-pastelPurple hover:bg-pastelYellow text-brandDark font-bold rounded-2xl text-base shadow-lg transition duration-300 transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer mt-4">
+                        <span>Kirim Sekarang</span>
+                        <i class="fa-solid fa-heart text-brandPrimary"></i>
+                    </button>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 🖨️ FOOTER: Bagian Hak Cipta Bawah Halaman (Sesuai Teks User) -->
+    <footer class="bg-brandDark text-white py-8 px-4 text-center mt-12 shadow-inner">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <div class="flex justify-center items-center gap-4 text-xl text-pastelPink">
+                <a href="#" class="hover:text-pastelYellow transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-pastelYellow transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="hover:text-pastelYellow transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-xs sm:text-sm font-medium text-gray-300">
+                &copy; 2026 Plushie Dreamland Studio. Tugas 3 Ekskul Multimedia.
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP UNTUK KATALOG -->
+    <div id="catalogModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity">
+        <div class="glass-card bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative border border-white transform transition-all scale-95 opacity-0" id="modalContent">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 text-brandDark hover:bg-rose-100 hover:text-rose-500 font-bold flex items-center justify-center transition">
+                ✕
+            </button>
+            <div class="text-center space-y-3">
+                <div id="modalEmoji" class="w-24 h-24 rounded-2xl bg-pastelPink/60 mx-auto flex items-center justify-center text-5xl shadow-inner">
+                    🧸
+                </div>
+                <h3 id="modalTitle" class="font-display text-2xl font-bold text-brandPrimary">Title</h3>
+                <p id="modalDesc" class="text-xs text-brandMuted">Description</p>
+
+                <div class="grid grid-cols-2 gap-2 text-left bg-pastelYellow/40 p-3 rounded-2xl text-xs">
+                    <div><span class="text-brandMuted">Ukuran:</span> <strong id="modalSize" class="text-brandDark">30 cm</strong></div>
+                    <div><span class="text-brandMuted">Tipe Kain:</span> <strong id="modalFabric" class="text-brandDark">Minky</strong></div>
+                </div>
+
+                <button onclick="orderFromModal()" class="w-full py-3 bg-pastelPurple hover:bg-pastelYellow text-brandDark font-bold rounded-xl shadow transition text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cart-shopping"></i> Pesan Model Ini
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-brandDark text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-pastelPink transition duration-300 transform translate-y-5">
+        <span class="text-xl text-pastelGreen" id="toastIcon">✨</span>
+        <div>
+            <h5 class="text-xs font-bold text-pastelPink" id="toastTitle">Berhasil!</h5>
+            <p class="text-xs text-gray-200" id="toastMessage">Pesan Anda telah dikirim.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Global Customizer State
+        let currentSize = { name: 'Medium (30 cm)', price: 220000, code: 'medium' };
+        let currentColor = { name: 'Strawberry Pink', hex: '#f4adcf' };
+        let currentFabric = { name: 'Minky Super Soft', price: 0 };
+        let currentAddons = [];
+
+        // DOM Loaded Init
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCalculator();
+
+            // Mobile menu toggle
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if(mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu on link click
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(mobileMenu) mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+
+        function selectSize(sizeCode, price) {
+            const sizeNames = {
+                'small': 'Small (15 cm)',
+                'medium': 'Medium (30 cm)',
+                'large': 'Large (50 cm)',
+                'giant': 'Giant (80 cm)'
+            };
+
+            currentSize = { name: sizeNames[sizeCode], price: price, code: sizeCode };
+
+            // Update UI buttons styling
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.classList.remove('bg-pastelPurple/40', 'border-pastelPurple', 'font-bold');
+                btn.classList.add('bg-white', 'border-pastelGreen');
+            });
+
+            const selectedBtn = document.getElementById(`size-${sizeCode}`);
+            if(selectedBtn) {
+                selectedBtn.classList.remove('bg-white', 'border-pastelGreen');
+                selectedBtn.classList.add('bg-pastelPurple/40', 'border-pastelPurple', 'font-bold');
+            }
+
+            updateCalculator();
+        }
+
+        function selectColor(hex, name) {
+            currentColor = { hex: hex, name: name };
+            document.getElementById('selected-color-label').innerText = `Terpilih: ${name}`;
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            // Read Fabric Option
+            const selectedFabricRadio = document.querySelector('input[name="fabric"]:checked');
+            if(selectedFabricRadio) {
+                currentFabric = {
+                    name: selectedFabricRadio.value,
+                    price: parseInt(selectedFabricRadio.dataset.price || '0')
+                };
+            }
+
+            // Read Addons Checkboxes
+            currentAddons = [];
+            let addonsPrice = 0;
+            document.querySelectorAll('.addon-check:checked').forEach(chk => {
+                currentAddons.push(chk.value);
+                addonsPrice += parseInt(chk.dataset.price || '0');
+            });
+
+            // Calculate Total
+            const total = currentSize.price + currentFabric.price + addonsPrice;
+
+            // Update Price Display
+            document.getElementById('total-price').innerText = `Rp ${total.toLocaleString('id-ID')}`;
+
+            // Update Summary Card Labels
+            document.getElementById('summary-size').innerText = currentSize.name;
+            document.getElementById('summary-fabric').innerText = currentFabric.name;
+            document.getElementById('summary-color').innerText = currentColor.name;
+
+            // Update Visual Circle Preview
+            const previewCircle = document.getElementById('preview-circle');
+            if(previewCircle) {
+                previewCircle.style.backgroundColor = currentColor.hex;
+            }
+
+            const sizeTag = document.getElementById('preview-size-tag');
+            if(sizeTag) {
+                sizeTag.innerText = currentSize.name;
+            }
+
+            // Update Addons List
+            const addonsList = document.getElementById('summary-addons');
+            if(addonsList) {
+                if(currentAddons.length === 0) {
+                    addonsList.innerHTML = '<li>Tanpa Aksesoris Tambahan</li>';
+                } else {
+                    addonsList.innerHTML = currentAddons.map(a => `<li>${a}</li>`).join('');
+                }
+            }
+        }
+
+        function applyCustomToForm() {
+            const textSummary = `[Pendaftaran Custom]\nUkuran: ${currentSize.name}\nBahan: ${currentFabric.name}\nWarna Dominan: ${currentColor.name}\nAksesoris: ${currentAddons.join(', ') || 'Tidak ada'}\nEstimasi Biaya: Rp ${document.getElementById('total-price').innerText}`;
+            
+            const catatanInput = document.getElementById('catatan');
+            const kategoriSelect = document.getElementById('pilihan');
+            
+            if(catatanInput) catatanInput.value = textSummary;
+            if(kategoriSelect) kategoriSelect.value = 'pendaftaran';
+
+            // Scroll smoothly to form
+            const kontakSection = document.getElementById('kontak');
+            if(kontakSection) {
+                kontakSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            showToast('Spesifikasi Diterapkan!', 'Spesifikasi custom berhasil dimuat ke formulir.');
+        }
+
+        function filterCatalog(category) {
+            const items = document.querySelectorAll('.catalog-item');
+            items.forEach(item => {
+                if(category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        let currentModalItem = '';
+
+        function openModal(title, desc, size, fabric, emoji) {
+            currentModalItem = title;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalSize').innerText = size;
+            document.getElementById('modalFabric').innerText = fabric;
+            document.getElementById('modalEmoji').innerText = emoji;
+
+            const modal = document.getElementById('catalogModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('catalogModal');
+            const modalContent = document.getElementById('modalContent');
+
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        function orderFromModal() {
+            closeModal();
+            const catatanInput = document.getElementById('catatan');
+            const kategoriSelect = document.getElementById('pilihan');
+            
+            if(catatanInput) catatanInput.value = `Saya berminat untuk memesan/merekayasa model catalog: "${currentModalItem}".`;
+            if(kategoriSelect) kategoriSelect.value = 'pendaftaran';
+
+            const kontakSection = document.getElementById('kontak');
+            if(kontakSection) {
+                kontakSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            showToast('Model Terpilih!', `Model ${currentModalItem} dimasukkan ke formulir.`);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('btnSubmit');
+            const nama = document.getElementById('nama').value || 'Cheline';
+            
+            if(btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Memproses...';
+            }
+
+            setTimeout(() => {
+                if(btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = '<span>Kirim Sekarang</span> <i class="fa-solid fa-heart text-brandPrimary"></i>';
+                }
+
+                showToast(`Terima kasih, ${nama}!`, 'Formulir Anda telah berhasil terkirim ke tim Plushie Dreamland.');
+                document.getElementById('contactForm').reset();
+            }, 1200);
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            const toastTitle = document.getElementById('toastTitle');
+            const toastMessage = document.getElementById('toastMessage');
+
+            if(toast && toastTitle && toastMessage) {
+                toastTitle.innerText = title;
+                toastMessage.innerText = message;
+
+                toast.classList.remove('hidden', 'translate-y-5', 'opacity-0');
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-y-5', 'opacity-0');
+                    setTimeout(() => toast.classList.add('hidden'), 300);
+                }, 4000);
+            }
+        }
+    </script>
+</body>
+</html>
